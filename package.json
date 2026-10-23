@@ -1,0 +1,30 @@
+{
+  "name": "tenfold",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Tenfold — subscription score-tracking, monthly prize draw and charity giving platform (Digital Heroes PRD Level 1)",
+  "scripts": {
+    "dev": "vite",
+    "dev:full": "vercel dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "node --test src/lib/drawEngine.test.js",
+    "seed:demo": "node --env-file=.env scripts/seed-demo.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.118.0",
+    "framer-motion": "^14.6.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-router-dom": "^7.18.4",
+    "stripe": "^23.0.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.1.2",
+    "vite": "^8.3.5"
+  }
+}
