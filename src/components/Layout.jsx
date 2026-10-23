@@ -7,7 +7,7 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
-  useEffect(() => setOpen(false), [location.pathname]);
+  useEffect(() => { setOpen(false); }, [location.pathname]);
 
   return (
     <header className={`nav ${open ? 'open' : ''}`}>

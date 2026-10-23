@@ -25,6 +25,8 @@ export const POST = safe(async (request) => {
   const session = await stripe.checkout.sessions.create({
     mode: 'payment',
     customer_email: auth?.user?.email,
+    // Indian Stripe accounts must collect name + address for non-INR (export) payments.
+    billing_address_collection: 'required',
     line_items: [{
       quantity: 1,
       price_data: { currency: CURRENCY, unit_amount: amount, product_data: { name: `Donation to ${charity.name}` } },

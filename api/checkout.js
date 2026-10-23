@@ -39,6 +39,8 @@ export const POST = safe(async (request) => {
     mode: 'subscription',
     customer: customerId,
     client_reference_id: user.id,
+    // Indian Stripe accounts must collect name + address for non-INR (export) payments.
+    billing_address_collection: 'required',
     line_items: [{
       quantity: 1,
       price_data: {
