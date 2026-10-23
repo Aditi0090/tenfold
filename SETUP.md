@@ -60,7 +60,9 @@ This handles renewals, cancellations and failed payments.
 In **Authentication → URL Configuration**, set **Site URL** to your Vercel URL and add `https://<your-site>/**` under Redirect URLs.
 
 ## 7. Create the test accounts
-In the project folder on your computer:
+**Easiest:** paste `supabase/seed-demo-accounts.sql` into Supabase → SQL Editor and click Run.
+
+**Or**, from the project folder on your computer:
 ```bash
 cp .env.example .env     # then paste VITE_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY into it
 npm install

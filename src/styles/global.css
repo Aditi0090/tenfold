@@ -104,16 +104,20 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .nav-links a.active, .nav-links a:hover { color: var(--ink); }
 .nav-actions { margin-left: auto; display: flex; gap: 10px; align-items: center; }
 .nav-toggle { display: none; background: none; border: 0; padding: 8px; cursor: pointer; }
+/* Desktop: the wrapper is invisible to layout, its children sit in the nav row */
+.nav-menu { display: contents; }
 @media (max-width: 860px) {
   .nav-toggle { display: block; margin-left: auto; }
-  .nav-links, .nav-actions { display: none; }
-  .nav.open .nav-links, .nav.open .nav-actions {
-    display: flex; flex-direction: column; align-items: flex-start;
-    position: absolute; left: 0; right: 0; background: var(--paper);
-    padding: 16px var(--gutter); margin: 0; border-bottom: 1px solid var(--line);
+  .nav-menu { display: none; }
+  .nav.open .nav-menu {
+    display: flex; flex-direction: column; gap: 18px;
+    position: absolute; top: 68px; left: 0; right: 0;
+    background: var(--paper); padding: 18px var(--gutter) 22px;
+    border-bottom: 1px solid var(--line); box-shadow: var(--shadow);
   }
-  .nav.open .nav-links { top: 68px; }
-  .nav.open .nav-actions { top: 220px; flex-direction: row; }
+  .nav.open .nav-links { display: flex; flex-direction: column; gap: 14px; margin: 0; }
+  .nav.open .nav-links a { font-size: var(--t-md); }
+  .nav.open .nav-actions { display: flex; margin: 0; }
 }
 
 /* ---------------------------------------------------------------- buttons */

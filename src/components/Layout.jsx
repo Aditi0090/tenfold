@@ -13,6 +13,8 @@ export function Navbar() {
     <header className={`nav ${open ? 'open' : ''}`}>
       <div className="wrap">
         <Link to="/" className="brand"><span className="brand-mark">10</span>Tenfold</Link>
+        {/* One wrapper so the mobile dropdown is a single solid panel */}
+        <div className="nav-menu">
         <nav className="nav-links" aria-label="Main">
           <NavLink to="/how-it-works">How it works</NavLink>
           <NavLink to="/charities">Charities</NavLink>
@@ -32,6 +34,7 @@ export function Navbar() {
               <Link className="btn btn-primary btn-sm" to="/subscribe">Subscribe</Link>
             </>
           )}
+        </div>
         </div>
         <button className="nav-toggle" aria-label="Menu" aria-expanded={open} onClick={() => setOpen((o) => !o)}>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d={open ? 'M6 6l12 12M18 6L6 18' : 'M4 7h16M4 12h16M4 17h16'} /></svg>
